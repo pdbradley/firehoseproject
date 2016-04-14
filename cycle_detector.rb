@@ -21,7 +21,11 @@ class CycleDetector
   private
 
   def move_hare
-    @hare = @hare.next_node.next_node if @hare.next_node
+    if @hare.next_node
+      @hare = @hare.next_node.next_node 
+    else
+      @hare = nil
+    end
   end
 
   def move_tortoise
