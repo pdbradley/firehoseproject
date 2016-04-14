@@ -1,4 +1,5 @@
 require_relative 'linked_list_node'
+require_relative 'stack'
 
 describe LinkedListNode do
   it "should be printable" do
