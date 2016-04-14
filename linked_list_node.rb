@@ -26,12 +26,23 @@ def print_values(list_node)
 end
 
 def reverse_list(list)
-    # ADD CODE HERE
+    stack = Stack.new
 
     while list
-      # ADD CODE HERE
+      stack.push(list.value)
       list = list.next_node
     end
 
-    # ADD CODE HERE
+    if popped = stack.pop
+      head = LinkedListNode.new(popped)
+      current_node = head
+
+      while popped = stack.pop do
+        current_node.next_node = LinkedListNode.new(popped)
+        current_node = current_node.next_node
+      end
+    else
+      head = nil
+    end
+    head
 end
