@@ -46,3 +46,13 @@ def reverse_list(list)
     end
     head
 end
+
+def reverse_list_via_mutation(list, previous=nil)
+  if list.nil?
+    previous
+  else
+    old_next = list.next_node
+    list.next_node = previous
+    reverse_list_via_mutation(old_next, list)
+  end
+end
