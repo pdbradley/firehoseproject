@@ -1,6 +1,8 @@
 require_relative 'linked_list_node'
 require_relative 'stack'
+require_relative 'cycle_detector'
 require_relative 'linked_list_helpers'
+require 'pry'
 
 describe LinkedListNode do
   it "should be printable" do
@@ -54,11 +56,40 @@ describe 'reverse_list_via_mutation' do
   end
 end
 
+describe CycleDetector do
+  describe '.detect' do
+    it 'should return true when given an infinite list' do
+      #expect(CycleDetector.detect(infinite_list)).to be true
+      binding.pry
+      expect(CycleDetector.detect(linked_list_1_through_3)).to be true
+    end
+    it 'should return false when given an infinite list' do
+    end
+  end
 
+end
+
+  #------------------------------------------------------------------------------
   # helper methods
+  def linked_list_of_length(length = 0, node = nil)
+    if length <= 0
+      return nil
+    else
+      LinkedListNode.new(rand(1000), linked_list_of_length((length - 1), node))
+    end
+  end
+
   def linked_list_1_through_3
     node1 = LinkedListNode.new(3)
     node2 = LinkedListNode.new(2, node1)
     node3 = LinkedListNode.new(1, node2)
     node3
+  end
+
+  def infinite_list
+    node1 = LinkedListNode.new(37)
+    node2 = LinkedListNode.new(99, node1)
+    node3 = LinkedListNode.new(12, node2)
+    node1.next_node = node3
+    node1
   end
