@@ -1,6 +1,6 @@
 require_relative 'linked_list_node'
 require_relative 'stack'
-require 'pry'
+require_relative 'linked_list_helpers'
 
 describe LinkedListNode do
   it "should be printable" do
