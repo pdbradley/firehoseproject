@@ -59,11 +59,10 @@ end
 describe CycleDetector do
   describe '.detect' do
     it 'should return true when given an infinite list' do
-      #expect(CycleDetector.detect(infinite_list)).to be true
-      binding.pry
-      expect(CycleDetector.detect(linked_list_1_through_3)).to be true
+      expect(CycleDetector.detect(infinite_list)).to be true
     end
-    it 'should return false when given an infinite list' do
+    it 'should return false when given a finite non cycling list' do
+      expect(CycleDetector.detect(linked_list_1_through_3)).to be false
     end
   end
 

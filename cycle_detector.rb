@@ -11,12 +11,11 @@ class CycleDetector
 
   def detect
     while list_continues?
-      puts "Tortoise: #{@tortoise}"
-      puts "Hare: #{@hare}"
       move_tortoise
       move_hare
+      return true if @tortoise == @hare
     end
-
+    return false
   end
 
   private
