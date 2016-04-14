@@ -2,7 +2,6 @@ require_relative 'linked_list_node'
 require_relative 'stack'
 require_relative 'cycle_detector'
 require_relative 'linked_list_helpers'
-require 'pry'
 
 describe LinkedListNode do
   it "should be printable" do
