@@ -13,3 +13,11 @@ The tests in the linked_list_spec.rb file should give some idea of whether these
 Thanks!  I enjoyed it.
 
 If get up early enough tomorrow I'll work on that fancy problem with the repeating lists.
+
+(time passes...)
+
+Okay, I did the Floyd Cycle Detection; once I realized you don't have to worry
+about finding the length of the cycle, etc, it is pretty simple, unless I 
+missed something.  Which is always possible.
+
+Cheers!
